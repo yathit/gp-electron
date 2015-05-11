@@ -1,7 +1,3 @@
-# Electrometeor
-
-## Overview
-
 [Electron](http://electron.atom.io) wrapper for GraphPaper web app base on [Electrometeor](https://github.com/sircharleswatson/Electrometeor). 
 
 ## Setup
@@ -26,7 +22,7 @@ Server side debug port is set to `5858` in `run.sh` file. It can be debug using 
 
 #### Credits
 
-* [Kitematic](https://github.com/kitematic/kitematic) app. Also many thanks to GitHub for creating 
+* [Kitematic](https://github.com/kitematic/kitematic) 
 * [Electron](http://electron.atom.io)
 * [Meteor](http://meteor.com)
 
