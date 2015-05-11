@@ -17,6 +17,12 @@ Swap meteor folder with graphpaper web app folder. Add private packages and sett
 Then run the app.    
 
     ./script/run.sh
+    
+## Debug
+
+Use devtools for client side debugging as provided in Electron. 
+
+Server side debug port is set to `5858` in `run.sh` file. It can be debug using node-inspacter or WebStrom.
 
 #### Credits
 
