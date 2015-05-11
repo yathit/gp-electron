@@ -6,7 +6,15 @@
 
 ## Setup
 
-Add graphpaper web app as meteor folder. Add private packages and setting file.
+Setup Electrometeor as describe [here](https://github.com/sircharleswatson/Electrometeor). Briefly run the script as follow:
+
+    ./script/setup.sh
+
+
+Swap meteor folder with graphpaper web app folder. Add private packages and setting file.
+
+    
+Then run the app.    
 
     ./script/run.sh
 
