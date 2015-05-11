@@ -138,7 +138,7 @@ var start = function (callback) {
 
                   setTimeout(function () {
                     var fullURL = rootURL + ":" + webPort;
-                    callback(fullURL, nodeChild, mongoChild);
+                    callback(preloadJs, fullURL, nodeChild, mongoChild);
                   }, 100);
                 }
               });
@@ -177,10 +177,15 @@ app.on('ready', function () {
       height: 600,
       resizeable: true,
       frame: true,
+      preload: path.join(dirname, 'preload.js')
     }
     mainWindow = new BrowserWindow(windowOptions);
     mainWindow.focus();
     mainWindow.loadUrl(url);
+    mainWindow.on('new-window', function(e) {
+      console.log('new-window created');
+      mainWindow.WebContents.executeJavaScript('console.log("executeJavaScript");');
+    });
 
     process.on('uncaughtException', cleanup);
 
