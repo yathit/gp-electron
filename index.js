@@ -110,6 +110,7 @@ var start = function (callback) {
               user_env.DIR = dirname;
               user_env.NODE_ENV = 'production';
               user_env.NODE_PATH = path.join(dirname, 'node_modules');
+              user_env.AUTOUPDATE_VERSION = 'c5ddc64a68015ccfb23bb9e694fecf2273f8bfb1';
 
               var nodePath = path.join(dirname, 'resources', 'node');
               var nodeArgs = path.join(dirname, 'bundle', 'main.js');
@@ -177,7 +178,7 @@ app.on('ready', function () {
       height: 600,
       resizeable: true,
       frame: true,
-      "node-integration": false,
+      // "node-integration": false,
       preload: path.join(dirname, 'preload.js')
     }
     mainWindow = new BrowserWindow(windowOptions);
