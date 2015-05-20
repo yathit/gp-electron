@@ -37,7 +37,7 @@ cd(base + '/meteor');
 // Start Meteor
 // ============
 var meteorCommand = onWindows === true ? 'meteor.bat' : 'meteor';
-var meteor = spawn(meteorCommand);
+var meteor = spawn(meteorCommand, ['--settings', 'settings.json']);
 
 
 // Start Electron
