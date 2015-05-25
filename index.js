@@ -135,6 +135,8 @@ function start (callback) {
               userEnv.DIR = dirname;
               userEnv.NODE_ENV = 'production';
               userEnv.NODE_PATH = path.join(dirname, 'node_modules');
+              userEnv.DDP_DEFAULT_CONNECTION_URL = "http://graphpaper.co";
+              userEnv.ACCOUNTS_CONNECTION_URL = "http://graphpaper.co";
 
               var nodePath = path.join(dirname, 'resources', 'node');
               var nodeArgs = path.join(dirname, 'bundle', 'main.js');
