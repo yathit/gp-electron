@@ -13,6 +13,7 @@ var path = require('path');
 
 // Make sure we don't try to run in production
 process.env.NODE_ENV = 'development';
+process.env.DDP_DEFAULT_CONNECTION_URL = 'http://graphpaper.co';
 
 // Get the directory of the current script
 var dir = __dirname;
