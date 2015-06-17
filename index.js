@@ -131,12 +131,10 @@ function start (callback) {
               userEnv.BIND_IP = '127.0.0.1';
               userEnv.DB_PATH = dataPath;
               userEnv.MONGO_URL = 'mongodb://localhost:' + mongoPort + '/meteor';
-              userEnv.METEOR_SETTINGS = fs.readFileSync(path.join(dirname, 'resources', 'settings.json'), 'utf8');
+              // user_env.METEOR_SETTINGS = fs.readFileSync(path.join(dirname, 'resources', 'settings.json'), 'utf8');
               userEnv.DIR = dirname;
               userEnv.NODE_ENV = 'production';
               userEnv.NODE_PATH = path.join(dirname, 'node_modules');
-              userEnv.DDP_DEFAULT_CONNECTION_URL = "http://graphpaper.co";
-              userEnv.ACCOUNTS_CONNECTION_URL = "http://graphpaper.co";
 
               var nodePath = path.join(dirname, 'resources', 'node');
               var nodeArgs = path.join(dirname, 'bundle', 'main.js');

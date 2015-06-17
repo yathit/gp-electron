@@ -13,7 +13,6 @@ var path = require('path');
 
 // Make sure we don't try to run in production
 process.env.NODE_ENV = 'development';
-process.env.DDP_DEFAULT_CONNECTION_URL = 'http://graphpaper.co';
 
 // Get the directory of the current script
 var dir = __dirname;
@@ -38,7 +37,7 @@ cd(base + '/meteor');
 // Start Meteor
 // ============
 var meteorCommand = onWindows === true ? 'meteor.bat' : 'meteor';
-var meteor = spawn(meteorCommand, ['--settings', 'settings.json']);
+var meteor = spawn(meteorCommand);
 
 
 // Start Electron

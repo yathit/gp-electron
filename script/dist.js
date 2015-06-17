@@ -49,7 +49,7 @@ echo('-----> Building bundle from Meteor app, this may take a few minutes');
 
 cd(base + '/meteor');
 var meteorCommand = onWindows === true ? 'meteor.bat' : 'meteor';
-exec(meteorCommand + ' build --debug --directory --server http://graphpaper.co ../.');
+exec(meteorCommand + ' build --directory ../.');
 
 cd(base + '/bundle');
 echo('-----> Installing bundle npm packages.');
@@ -146,13 +146,11 @@ function copyBinaryFiles (os, name) {
     case 'linux':
       mkdir('./dist/' + os + '/' + name + '/resources/app/resources');
       cp('./resources/*', './dist/' + os + '/' + name + '/resources/app/resources/');
-      cp('./meteor/settings.json', './dist/' + os + '/' + name + '/resources/app/resources/');
       break;
 
     case 'osx':
       mkdir('./dist/osx/' + name + '.app/Contents/Resources/app/resources');
       cp('./resources/*', './dist/osx/' + name + '.app/Contents/Resources/app/resources/');
-      cp('./meteor/settings.json', './dist/osx/' + name + '.app/Contents/Resources/app/resources/');
       break;
 
     default:
