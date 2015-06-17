@@ -1,4 +1,4 @@
-# GP-Graphpaper
+# GP-Electron
 
 Electron wrapper for GraphPaper using [Electrometeor](https://github.com/sircharleswatson/Electrometeor).
 
