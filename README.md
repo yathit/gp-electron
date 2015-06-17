@@ -53,7 +53,27 @@ If mongo stuck due to lock, delete lock file
     
     rm ~/Library/Application\ Support/Electrometeor/data/mongod.lock
 
-Module loading in String.js file. Remove module loading parts.
+Remove module loading in String.js file in `aldeed:simple-schema`, as follow. Since it is in module file, we have to remove the package and put the package into `meteor/packages` folder.
+
+    /*************************************
+    /* Exports
+    /*************************************/
+    
+      /*
+      if (typeof module !== 'undefined'  && typeof module.exports !== 'undefined') {
+        module.exports = Export;
+    
+      } else {
+    
+        if(typeof define === "function" && define.amd) {
+          define([], function() {
+            return Export;
+          });
+        } else {*/
+          window.S = Export;
+      /*  }
+      }*/
+
 
 
 
