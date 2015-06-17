@@ -131,7 +131,8 @@ function start (callback) {
               userEnv.BIND_IP = '127.0.0.1';
               userEnv.DB_PATH = dataPath;
               userEnv.MONGO_URL = 'mongodb://localhost:' + mongoPort + '/meteor';
-              // user_env.METEOR_SETTINGS = fs.readFileSync(path.join(dirname, 'resources', 'settings.json'), 'utf8');
+              userEnv.DDP_DEFAULT_CONNECTION_URL = 'http://graphpaper.co';
+              userEnv.METEOR_SETTINGS = fs.readFileSync(path.join(dirname, 'resources', 'settings.json'), 'utf8');
               userEnv.DIR = dirname;
               userEnv.NODE_ENV = 'production';
               userEnv.NODE_PATH = path.join(dirname, 'node_modules');
@@ -151,6 +152,8 @@ function start (callback) {
               });
 
               nodeChild.stdout.setEncoding('utf8');
+
+              /**
               nodeChild.stdout.on('data', function (nodeData) {
                 console.log(nodeData);
 
@@ -167,6 +170,11 @@ function start (callback) {
                   }, 100);
                 }
               });
+               */
+              setTimeout(function () {
+                var fullURL = rootURL + ':' + webPort;
+                callback(fullURL, nodeChild, mongoChild);
+              }, 2000);
             }
           });
         });

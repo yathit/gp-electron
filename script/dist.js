@@ -49,7 +49,7 @@ echo('-----> Building bundle from Meteor app, this may take a few minutes');
 
 cd(base + '/meteor');
 var meteorCommand = onWindows === true ? 'meteor.bat' : 'meteor';
-exec(meteorCommand + ' build --directory ../.');
+exec(meteorCommand + ' build --directory ../. --architecture os.osx.x86_64 --server graphpaper.co:80');
 
 cd(base + '/bundle');
 echo('-----> Installing bundle npm packages.');
